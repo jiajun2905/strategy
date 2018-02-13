@@ -13,9 +13,9 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Retention(RUNTIME)
 public @interface StrategyGroup {
 
-    String group() ;
+    String group() ;//对应不同的业务场景
 
-    Class interfaces() default Object.class;
+    Class interfaces() default Object.class; //父接口类
 
-    String key();
+    String key(); //业务场景中 关联到具体的processor的映射key
 }

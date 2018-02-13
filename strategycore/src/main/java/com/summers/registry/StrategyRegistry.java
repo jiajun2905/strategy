@@ -24,6 +24,9 @@ public class StrategyRegistry {
         clazz = clazz == null ? Object.class : clazz;
         if (registryMap.containsKey(group)){
             registryMap.get(group).put(key,processor);
+            if (!Object.class.equals(clazz)){
+                groupClassMap.put(group,clazz);
+            }
         } else {
             synchronized (registryMap){
                 if (registryMap.containsKey(group)){
